@@ -10,7 +10,13 @@ class Store extends Component {
         this.state = {  }
     }
     render() { 
-        return (  );
+        return (
+            <div className='Store'>
+                <Navbar />
+                <ItemList />
+                <Cart />
+            </div>
+        );
     }
 }
  

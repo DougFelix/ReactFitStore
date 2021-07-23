@@ -8,7 +8,11 @@ class ItemList extends Component {
         this.state = {  }
     }
     render() { 
-        return ();
+        return (
+            <div className='ItemList'>
+                <Item />
+            </div>
+        );
     }
 }
  

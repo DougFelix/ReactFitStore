@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-class Navbar extends Component {
+class CartItem extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     render() { 
         return (
-            <div className='Navbar'>
-                Navbar
+            <div className='CartItem'>
+                CART ITEM
             </div>
         );
     }
 }
  
-export default Navbar;
+export default CartItem;

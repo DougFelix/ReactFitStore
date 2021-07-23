@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CartItem from './CartItem';
 
 class Cart extends Component {
     constructor(props) {
@@ -6,7 +7,11 @@ class Cart extends Component {
         this.state = {  }
     }
     render() { 
-        return (  );
+        return (
+            <div className='Cart'>
+                <CartItem />
+            </div>
+        );
     }
 }
  
