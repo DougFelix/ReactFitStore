@@ -1,0 +1,28 @@
+.Store {
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.Navbar, .Cart, .ItemList {
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 2rem 2rem 2rem;
+    background: #fff;
+    color: lightslategray;
+    box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+    overflow: hidden;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.Navbar {
+    width: 100px;
+}
+.ItemList {
+    width: 600px;
+}
+.Cart {
+    width: 300px;
+}
