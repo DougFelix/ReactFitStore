@@ -1,3 +1,18 @@
+# Desafio
+Cria uma loja virtual onde os jogadores RadarFit, possa trocar suas moedas.
+
+Essa loja virtual deve conter um carrinho de compra, onde o usuário pode adicionar ou remover itens deste carrinho.
+
+Ao finalizar a compra, o carrinho do usuário deve ser esvaziado e as moedas devem ser descontadas do saldo atual.
+
+Você não precisa utilizar APIs para nenhuma das ações aqui, tudo pode ser feito utilizando dados mockados. (Dados fake);
+
+O que vai ser avaliado é a sua habilidade e controle em componentização, mudança de estado e fluxo de dados na aplicação.
+
+<p align="center">
+  <img src="prize.gif" alt='prize'/>
+</p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
