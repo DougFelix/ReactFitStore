@@ -3,6 +3,13 @@
     align-items: center;
     text-align: left;
     padding: 0 0.5rem 1.5rem;
+    width: inherit;
+}
+
+.Item-Description {
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .Item-Image img {
@@ -14,6 +21,9 @@
     color: #000;
     text-transform: uppercase;
     padding-bottom: 0.5rem;
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .Item-Category {
