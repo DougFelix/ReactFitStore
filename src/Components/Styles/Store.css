@@ -27,3 +27,8 @@
 .Cart {
     width: 400px;
 }
+
+.Cart-Total{
+    font-size: x-large;
+    padding: 0.5rem 1.5rem 1rem;
+}

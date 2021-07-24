@@ -12,12 +12,15 @@ class Store extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            wallet: 10000.00,
             itemList: '',
             cartList: '',
             cartSet: new Set(),
             totalCart: 0
         }
         this.handleAdd = this.handleAdd.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleCheckout = this.handleCheckout.bind(this);
     }
 
     async componentDidMount(){
@@ -28,6 +31,28 @@ class Store extends Component {
             console.log(e);
         }
         
+    }
+
+    handleDelete(id) {
+        let updated = this.state.cartList.map(function(item) {
+            if (item.id === id) {
+                item.amount-=1;
+            }
+            return item;
+        })
+        let item = updated.filter(item => item.id === id);
+        if (item[0].amount <= 0) {
+            let updated2 = updated.filter(item => item.amount > 0);
+            let set = [...this.state.cartSet]
+            let setDeleted = set.filter(n => n !== id);
+            this.setState({
+                cartList: updated2,
+                cartSet: new Set(setDeleted)
+            })
+        } else {
+            this.setState({cartList: updated});
+        }
+
     }
 
     handleAdd(id) {
@@ -50,14 +75,25 @@ class Store extends Component {
         }
     }
 
-    render() { 
-        let {itemList, cartList} = this.state;
+    handleCheckout(total) {
+        this.setState(st => ({
+            wallet: st.wallet-total,
+            cartList: '',
+            cartSet: new Set(),
+            totalCart: 0
+        }))
+        alert('YOU BOUGHT STUFF')
+    }
 
+    render() { 
+        let {itemList, cartList, wallet} = this.state;
+        let total = Object.values(cartList).map(item => item.amount*item.price).reduce((a, b) => a + b, 0)
+        
         return (
             <div className='Store'>
-                <Navbar />
+                <Navbar wallet={wallet} />
                 <ItemList itemList={itemList} handleAdd={this.handleAdd}/>
-                <Cart cartList={cartList}/>
+                <Cart cartList={cartList} total={total} handleAdd={this.handleAdd} handleDelete={this.handleDelete} handleCheckout={this.handleCheckout} />
             </div>
         );
     }

@@ -4,7 +4,7 @@ import './Styles/Item.css';
 
 class Item extends Component {
     
-    handleAdd = () => {
+    Add = () => {
         let {handleAdd, item} = this.props;
         handleAdd(item.id);
     }
@@ -31,7 +31,7 @@ class Item extends Component {
                     <i className="coin fab fa-bitcoin"></i> {item.price}
                     </div>     
                 </div>
-                <button onClick={this.handleAdd}><i className="fas fa-plus"></i></button>
+                <button onClick={this.Add}><i className="fas fa-plus"></i></button>
             </div>
         );
     }

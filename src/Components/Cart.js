@@ -2,28 +2,28 @@ import React, { Component } from 'react';
 import CartItem from './CartItem';
 
 class Cart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
+
+    
     render() {
 
-        let {cartList} = this.props;
+        let {cartList, total, handleAdd, handleDelete, handleCheckout} = this.props;
+        var formatter = new Intl.NumberFormat([]);
+
         let list = '';
         if(Array.isArray(cartList) && cartList.length !== 0) {
             list = cartList.map(item =>
-                <CartItem key={item.id} item={item}/>
-            )
+                <CartItem key={item.id} item={item} handleAdd={handleAdd} handleDelete={handleDelete}/>
+            );
         }
 
         return (
             <div className='Cart'>
                 {list}
+                <hr></hr>
                 <div className='Cart-Total'>
-                    <hr></hr>
-                    TOTAL:
+                    TOTAL: <i className="coin fab fa-bitcoin"></i> {formatter.format(total)}
                 </div>
-                <button className='Cart-Checkout'>Checkout</button>
+                <button className='Cart-Checkout' onClick={() => handleCheckout(total)} >Checkout</button>
             </div>
         );
     }
