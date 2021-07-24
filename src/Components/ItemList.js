@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import Item from './Item';
-import axios from 'axios';
 
 class ItemList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
+
+    render() {
+        let {itemList, handleAdd} = this.props;
+        let list = '';
+        if(Array.isArray(itemList) && itemList.length !== 0) {
+            list = itemList.map(item =>
+                <Item key={item.id} item={item} handleAdd={handleAdd}/>
+            )
+        }
+
         return (
             <div className='ItemList'>
-                <Item />
+                {list}
             </div>
         );
     }

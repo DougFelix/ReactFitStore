@@ -6,10 +6,19 @@ class Cart extends Component {
         super(props);
         this.state = {  }
     }
-    render() { 
+    render() {
+
+        let {cartList} = this.props;
+        let list = '';
+        if(Array.isArray(cartList) && cartList.length !== 0) {
+            list = cartList.map(item =>
+                <CartItem key={item.id} item={item}/>
+            )
+        }
+
         return (
             <div className='Cart'>
-                <CartItem />
+                {list}
             </div>
         );
     }

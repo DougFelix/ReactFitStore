@@ -1,0 +1,27 @@
+.Item {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    text-align: left;
+    padding: 1rem;
+}
+
+.Item-Image img {
+    width: 150px;
+    padding-right: 1rem;
+}
+
+.Item-Title{
+    color: #000;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+}
+
+.Item-Price {
+    color: #000;
+    padding-top: 0.5rem;
+}
+
+.Item > button {
+    margin-left: 1rem;
+}

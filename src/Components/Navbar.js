@@ -8,7 +8,7 @@ class Navbar extends Component {
     render() { 
         return (
             <div className='Navbar'>
-                Navbar
+                NAVBAR
             </div>
         );
     }
