@@ -18,12 +18,18 @@ class Cart extends Component {
 
         return (
             <div className='Cart'>
-                {list}
+                <div className='Title'>Cart</div>
+                {list.length === 0
+                ? 'EMPTY'  
+                : list
+                }
                 <hr></hr>
                 <div className='Cart-Total'>
                     TOTAL: <i className="coin fab fa-bitcoin"></i> {formatter.format(total)}
                 </div>
                 <button className='Cart-Checkout' onClick={() => handleCheckout(total)} >Checkout</button>
+
+                
             </div>
         );
     }

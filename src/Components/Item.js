@@ -28,7 +28,7 @@ class Item extends Component {
                         Description: {item.description}
                     </div>   
                     <div className='Item-Price'>
-                    <i className="coin fab fa-bitcoin"></i> {item.price}
+                        <i className="coin fab fa-bitcoin"></i> {item.price}
                     </div>     
                 </div>
                 <button onClick={this.Add}><i className="fas fa-plus"></i></button>

@@ -14,6 +14,7 @@ class ItemList extends Component {
 
         return (
             <div className='ItemList'>
+                <div className='Title'>PRODUCTS</div>
                 {list}
             </div>
         );
