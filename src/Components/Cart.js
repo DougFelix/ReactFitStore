@@ -19,6 +19,11 @@ class Cart extends Component {
         return (
             <div className='Cart'>
                 {list}
+                <div className='Cart-Total'>
+                    <hr></hr>
+                    TOTAL:
+                </div>
+                <button className='Cart-Checkout'>Checkout</button>
             </div>
         );
     }

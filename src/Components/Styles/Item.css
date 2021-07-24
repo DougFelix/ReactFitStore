@@ -1,9 +1,8 @@
 .Item {
     display: flex;
     align-items: center;
-    border: 1px solid black;
     text-align: left;
-    padding: 1rem;
+    padding: 1.5rem 0.5rem;
 }
 
 .Item-Image img {
@@ -17,6 +16,10 @@
     padding-bottom: 0.5rem;
 }
 
+.Item-Category {
+    margin-bottom: 0.5rem;
+}
+
 .Item-Price {
     color: #000;
     padding-top: 0.5rem;
@@ -24,4 +27,8 @@
 
 .Item > button {
     margin-left: 1rem;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    color: lightslategray;
 }

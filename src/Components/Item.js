@@ -11,10 +11,6 @@ class Item extends Component {
 
     render() {
         let {item} = this.props;
-        var formatter = new Intl.NumberFormat([], {
-            style: 'currency',
-            currency: 'BRL',
-        });
 
         return (
             <div className='Item'>
@@ -29,10 +25,10 @@ class Item extends Component {
                         Category: {item.category}
                     </div>
                     <div className='Item-Description'>
-                        {item.description}
+                        Description: {item.description}
                     </div>   
                     <div className='Item-Price'>
-                        {formatter.format(item.price)}
+                    <i className="coin fab fa-bitcoin"></i> {item.price}
                     </div>     
                 </div>
                 <button onClick={this.handleAdd}><i className="fas fa-plus"></i></button>

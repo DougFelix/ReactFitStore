@@ -13,7 +13,9 @@ class Store extends Component {
         super(props);
         this.state = {
             itemList: '',
-            cartList: ''
+            cartList: '',
+            cartSet: new Set(),
+            totalCart: 0
         }
         this.handleAdd = this.handleAdd.bind(this);
     }
@@ -30,12 +32,27 @@ class Store extends Component {
 
     handleAdd(id) {
         let item = this.state.itemList.filter(item => item.id === id);
-        item[0]["amount"] = 1;
-        this.setState(st => ({cartList: [...st.cartList, ...item]}))
+        if(this.state.cartSet.has(id)){
+            let updated = this.state.cartList.map(function(item) {
+                if (item.id === id) {
+                    item.amount+=1;
+                }
+                return item;
+            })
+            this.setState({cartList: updated});
+
+        } else {
+            item[0]["amount"] = 1;
+            this.setState(st => ({
+                cartList: [...st.cartList, ...item],
+                cartSet: new Set(st.cartSet).add(id)
+            }))
+        }
     }
 
     render() { 
         let {itemList, cartList} = this.state;
+
         return (
             <div className='Store'>
                 <Navbar />

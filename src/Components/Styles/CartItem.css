@@ -5,27 +5,43 @@
     padding: 1rem;
 }
 
+.CartItem-Amount {
+    margin-right: 1rem;
+    font-size: x-large;
+}
+
 .CartItem-Image img {
-    width: 150px;
+    width: 50px;
 }
 
 .CartItem-Information{
-    padding: 1rem;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
 }
 
 .CartItem-Title{
-    color: #000;
-    text-transform: uppercase;
+    color: lightslategray;
     padding-bottom: 0.5rem;
 }
 
 .CartItem-Price {
     color: #000;
-    padding-top: 0.5rem;
 }
 
 .CartItem-Buttons {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-top: 0.5rem;
+}
+
+.CartItem-Buttons > button{
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    color: lightslategray;
+    
+}
+
+.coin {
+    color: gold;
 }
